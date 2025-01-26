@@ -1,0 +1,192 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #2c3e50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #ecf0f1;
+}
+
+.music-player {
+    background: #34495e;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 800px; /* Set a max width for the player */
+}
+
+.player-container {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    align-items: center;
+    justify-content: space-between; /* Space between cover and controls */
+    width: 100%; /* Full width */
+}
+
+.cover img {
+    width: 120px; /* Fixed width for cover */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+}
+
+.controls-container {
+    flex-grow: 1; /* Allow controls to take remaining space */
+    padding: 0 20px; /* Space around controls */
+}
+
+.song-details h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.song-details p {
+    margin: 5px 0 20px;
+    font-size: 1em;
+    color: #bdc3c7;
+}
+
+.controls {
+    display: flex; /* Use flexbox for controls */
+    justify-content: center; /* Center the controls */
+    margin: 10px 0; /* Space between controls and other elements */
+}
+
+.controls button {
+    background: none;
+    border: none;
+    color: #ecf0f1;
+    font-size: 1.5em;
+    margin: 0 5px; /* Reduced margin for a more compact layout */
+    cursor: pointer;
+    outline: none;
+}
+
+.controls button:hover {
+    color: #3498db;
+}
+
+.progress-container {
+    width: 100%;
+    margin: 10px 0; /* Margin for spacing */
+}
+
+#seek-bar {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #7f8c8d;
+    height: 5px;
+    border-radius: 5px;
+    outline: none;
+}
+
+#seek-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #3498db;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#seek-bar::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #3498db;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.time-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #bdc3c7;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-top: 20px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #7f8c8d;
+    height: 5px;
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #3498db;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #3498db;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.playlist {
+    margin-top: 20px;
+    text-align: left;
+    width: 100%; /* Full width */
+    max-height: 300px; /* Limit height for playlist */
+    overflow-y: auto; /* Enable scrolling for long playlists */
+}
+
+.playlist h3 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: #ecf0f1;
+}
+
+.playlist ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.playlist li {
+    cursor: pointer;
+    padding: 5px 10px; /* Add padding to list items */
+    color: #bdc3c7;
+    transition: background 0.3s; /* Smooth background transition */
+}
+
+.playlist li:hover {
+    color: #ecf0f1;
+    background: rgba(255, 255, 255, 0.1); /* Highlight on hover */
+}
+
+@media (max-width: 600px) {
+    .player-container {
+        flex-direction: column; /* Stack vertically on small screens */
+        align-items: center; /* Center align items */
+    }
+
+    .cover {
+        margin-bottom: 15px; /* Space between cover and controls */
+    }
+
+    .controls-container {
+        padding: 0; /* Remove padding on small screens */
+        text-align: center; /* Center text */
+    }
+
+    .controls button {
+        margin: 0 2px; /* Adjust button spacing */
+    }
+}
